@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 
 server.use(bodyParser.json());
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 const db = require("./db");
 const dbName = process.env.DB_NAME
