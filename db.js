@@ -1,7 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 require('dotenv').config()
 
-const dbConnectionUrl = process.env.DB_DATABASE;
+const dbConnectionUrl = process.env.MONGODB_URI;
 
 function initialize(
     dbName,
