@@ -9,8 +9,8 @@ server.use(bodyParser.json());
 const port = process.env.PORT || 4000;
 
 const db = require("./db");
-const dbName = process.env.DB_NAME
-const collectionName = process.env.DB_COLLECTION_NAME
+const dbName = 'data'
+const collectionName = 'plants'
 
 db.initialize(dbName, collectionName, function(dbCollection) {
 
