@@ -16,10 +16,24 @@ const port = process.env.PORT || 4000;
 const db = require("./db");
 const dbName = 'data'
 const collectionSkills = 'skills'
+const collectionExperience = 'experiences'
 
 db.initialize(dbName, collectionSkills, function(dbCollection) {
 
     server.get("/skills", (request, response) => {
+        dbCollection.find().toArray((error, result) => {
+            if (error) throw error;
+            response.json(result);
+        });
+    });
+
+}, function(err) {
+    throw (err);
+});
+
+db.initialize(dbName, collectionExperience, function(dbCollection) {
+
+    server.get("/experiences", (request, response) => {
         dbCollection.find().toArray((error, result) => {
             if (error) throw error;
             response.json(result);
