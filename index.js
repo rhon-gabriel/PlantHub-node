@@ -15,11 +15,11 @@ const port = process.env.PORT || 4000;
 
 const db = require("./db");
 const dbName = 'data'
-const collectionName = 'plants'
+const collectionSkills = 'skills'
 
-db.initialize(dbName, collectionName, function(dbCollection) {
+db.initialize(dbName, collectionSkills, function(dbCollection) {
 
-    server.get("/plants", (request, response) => {
+    server.get("/skills", (request, response) => {
         dbCollection.find().toArray((error, result) => {
             if (error) throw error;
             response.json(result);
